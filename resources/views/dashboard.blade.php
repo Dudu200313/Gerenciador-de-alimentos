@@ -31,9 +31,12 @@
                     <div clas="w-96 bg-white p-4 absolute left-1/4 right-1/4 top-1/4 z-10">
                         <h2 class="text-xl font-bold text-center">Are you sure?</h2>
                         <div class="flex justify-between mt-4">
-                            <form action="">
-                                
+                            <form action="{{route('alimento.destroy' , $alimento)}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <x-primary-button>Delete anyway</x-primary-button>
                             </form>
+                            <
                         </div>
                     </div>
                    </div>
