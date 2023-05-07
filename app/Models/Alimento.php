@@ -10,7 +10,7 @@ class Alimento extends Model
     use HasFactory;
     
     protected $fillable = [
-        'nome da refeicao',
+        'nome_da_refeicao',
         'descricao',
         'horario',
         'caloria',
