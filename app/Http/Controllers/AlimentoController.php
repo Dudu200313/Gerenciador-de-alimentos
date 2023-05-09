@@ -3,19 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alimento;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AlimentoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +29,15 @@ class AlimentoController extends Controller
      */
     public function store(Request $request)
     {
-        User::find()
+        User::find(Auth::user()->id)
+           ->myAlimento()
+           ->create([
+              'nome_da_refeicao' => $request -> nome_da_refeicao,
+              'descricao' => $request -> descricao,
+              'horario' => $request -> horario,
+              'caloria' => $request -> caloria
+           ]);
+           return redirect (route('dashboard'));
     }
 
     /**
