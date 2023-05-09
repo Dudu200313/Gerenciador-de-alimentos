@@ -35,7 +35,7 @@ class AlimentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::find()
     }
 
     /**
@@ -78,8 +78,11 @@ class AlimentoController extends Controller
      * @param  \App\Models\Alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alimento $alimento)
+    public function destroy($id)
     {
-        //
+        $alimento = Alimento::findOrFail($id);
+        $alimento -> delete();
+
+        return redirect (route('dashboard'));
     }
 }
