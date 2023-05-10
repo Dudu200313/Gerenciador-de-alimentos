@@ -21,10 +21,10 @@
                                 </div>
                                 <div class="flex gap-2">
                                     <div>
-                                    <span class="cursor-pointer px-2 bg-red-500 text-white mr-2" @click="showDelete = true">Delete</span>
+                                        <span class="cursor-pointer px-2 bg-red-500 text-white mr-2" @click="showDelete = true">Delete</span>
                                     </div>
                                     <div>
-                                    <span class="cursor-pointer px-2 bg-blue-500 text-white" @click="showEdit = true">Edit</span>
+                                        <span class="cursor-pointer px-2 bg-blue-500 text-white" @click="showEdit = true">Edit</span>
                                     </div>
                                 </div>
                                 <template x-if="showDelete">

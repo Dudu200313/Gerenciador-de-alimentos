@@ -62,7 +62,7 @@ class AlimentoController extends Controller
     public function update(Request $request, Alimento $alimento)
     {
         $alimento -> update([
-            'nome_do_alimento' => $request -> nome_do_alimeto,
+            'nome_da_refeicao' => $request -> nome_da_refeicao,
             'descricao' => $request -> descricao,
             'horario' => $request -> horario,
             'caloria' => $request-> caloria
