@@ -35,7 +35,7 @@ class AlimentoController extends Controller
               'nome_da_refeicao' => $request -> nome_da_refeicao,
               'descricao' => $request -> descricao,
               'horario' => $request -> horario,
-              'caloria' => $request -> caloria,
+              'caloria' => $request -> caloria
            ]);
            return redirect (route('dashboard'));
     }
@@ -61,7 +61,14 @@ class AlimentoController extends Controller
      */
     public function update(Request $request, Alimento $alimento)
     {
-        //
+        $alimento -> update([
+            'nome_do_alimento' => $request -> nome_do_alimeto,
+            'descricao' => $request -> descricao,
+            'horario' => $request -> horario,
+            'caloria' => $request-> caloria
+        ]);
+
+        return redirect (route('dashboard'));
     }
 
     /**

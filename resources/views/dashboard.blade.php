@@ -21,10 +21,10 @@
                                 </div>
                                 <div class="flex gap-2">
                                     <div>
-                                        <span class="cursor-pointer px-2 bg-red-500 texte-white" @click="showDelete = true">Delete</span>
+                                    <span class="cursor-pointer px-2 bg-red-500 text-white mr-2" @click="showDelete = true">Delete</span>
                                     </div>
                                     <div>
-                                        <span class="cursor-pointer px-2 bg-red-500 texte-white" @click="showEdit = true">Edit</span>
+                                    <span class="cursor-pointer px-2 bg-blue-500 text-white" @click="showEdit = true">Edit</span>
                                     </div>
                                 </div>
                                 <template x-if="showDelete">
@@ -35,7 +35,7 @@
                                                 <form action="{{ route('alimento.destroy', $alimento) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <x-danger-button class="text-center">Delete anyway</x-danger-button>
+                                                    <x-danger-button>Delete anyway</x-danger-button>
                                                 </form>
                                                 <x-primary-button @click="showDelete = false">Cancel</x-primary-button>
                                             </div>
@@ -43,25 +43,25 @@
                                     </div>
                                 </template>
                                 <template x-if="showEdit">
-    <div class="absolute top-0 bottom-0 left-0 right-0 bg-gray-800 bg-opacity-20 z-0">
-        <div class="w-96 bg-white p-4 absolute left-1/4 right-1/4 top-1/4 z-10">
-            <h2 class="text-xl font-bold text-center">{{$alimento->nome_da_refeicao}}</h2>
-            <h2 class="text-xl font-bold text-center">{{$alimento->descricao}}</h2>
-            <h2 class="text-xl font-bold text-center">{{$alimento->horario}}</h2>
-            <h2 class="text-xl font-bold text-center">{{$alimento->caloria}}</h2>
-            <form class="my-4" action="{{route('alimento.update', $alimento)}}" method="POST">
-                @csrf
-                @method('PUT')
-                <x-text-input name="nome_da_refeicao" placeholder="nome_da_refeicao" value="{{$alimento->nome_da_refeicao}}" />
-                <x-text-input name="descricao" placeholder="descricao" value="{{$alimento->descricao}}" />
-                <x-text-input name="horario" placeholder="horario" value="{{$alimento->horario}}" />
-                <x-text-input name="caloria" placeholder="caloria" value="{{$alimento->caloria}}" />
-                <x-primary-button class="w-full text-center mt-2">Save</x-primary-button>
-            </form>
-            <x-danger-button @click="showEdit = false" class="w-full">Cancel</x-danger-button>
-        </div>
-    </div>
-</template>
+                                    <div class="absolute top-0 bottom-0 left-0 right-0 bg-gray-800 bg-opacity-20 z-0">
+                                        <div class="w-96 bg-white p-4 absolute left-1/4 right-1/4 top-1/4 z-10">
+                                            <h2 class="text-xl font-bold text-center">{{$alimento->nome_da_refeicao}}</h2>
+                                            <h2 class="text-xl font-bold text-center">{{$alimento->descricao}}</h2>
+                                            <h2 class="text-xl font-bold text-center">{{$alimento->horario}}</h2>
+                                            <h2 class="text-xl font-bold text-center">{{$alimento->caloria}}</h2>
+                                            <form class="my-4" action="{{route('alimento.update', $alimento)}}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <x-text-input name="nome_da_refeicao" placeholder="nome_da_refeicao" value="{{$alimento->nome_da_refeicao}}" />
+                                                <x-text-input name="descricao" placeholder="descricao" value="{{$alimento->descricao}}" />
+                                                <x-text-input name="horario" placeholder="horario" value="{{$alimento->horario}}" />
+                                                <x-text-input name="caloria" placeholder="caloria" value="{{$alimento->caloria}}" />
+                                                <x-primary-button class="w-full text-center mt-2">Save</x-primary-button>
+                                            </form>
+                                            <x-danger-button @click="showEdit = false" class="w-full">Cancel</x-danger-button>
+                                        </div>
+                                    </div>
+                                </template>
                             </div>
                             @endforeach
 
